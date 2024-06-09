@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSecure - Your Trusted Cybersecurity Partner</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+ <header class="header-bg">
+    <h1>CyberSecure</h1>
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about">
+  <h2>About CyberSecure</h2>
+  <p>CyberSecure is a leading cybersecurity firm dedicated to protecting businesses from cyber threats. Our team of experts offers comprehensive solutions tailored to meet the unique needs of each client. With years of experience and cutting-edge technology, we ensure your data and systems are secure. Our services include risk assessment, threat detection, incident response, and continuous monitoring, providing you with peace of mind. At CyberSecure, we pride ourselves on our commitment to excellence and our proactive approach to cybersecurity, safeguarding your business in an ever-evolving digital landscape.</p>
+</section>
+
+   <section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <ul>
+      <li>
+        <strong>Penetration Testing:</strong>
+        <p>Penetration testing, or ethical hacking, involves simulating cyberattacks on your systems to identify vulnerabilities before malicious hackers can exploit them. Our team of experts uses a variety of techniques to probe your network, applications, and infrastructure for weaknesses. By doing so, we can uncover security gaps, assess the effectiveness of your existing defenses, and provide actionable recommendations to fortify your systems. This proactive approach not only helps prevent data breaches and cyber attacks but also ensures your organization's compliance with industry standards and regulations, ultimately safeguarding your sensitive information and maintaining your reputation.</p>
+      </li>
+      <li>
+        <strong>Security Audits:</strong>
+        <p>Security audits are thorough evaluations of your organization's security policies, practices, and infrastructure. Our comprehensive reviews aim to ensure that your systems are in line with the latest security standards and regulatory requirements. During an audit, we examine your hardware, software, data handling procedures, and overall cybersecurity posture. This meticulous process helps identify potential vulnerabilities, misconfigurations, and areas for improvement. By addressing these issues, we assist you in bolstering your defenses, mitigating risks, and maintaining a robust security framework that protects your business operations and sensitive data from potential threats.</p>
+      </li>
+      <li>
+        <strong>Incident Response:</strong>
+        <p>Incident response services are crucial for managing and mitigating the impact of cyber attacks when they occur. Our team of seasoned professionals is ready to spring into action at the first sign of a breach. We swiftly assess the situation, contain the threat, and work to eradicate the attacker from your systems. Following the immediate response, we assist in recovery efforts, including restoring affected systems and data. Additionally, we provide a detailed post-incident analysis to understand the attack vector and develop strategies to prevent future incidents. This rapid and effective response minimizes downtime and damage, ensuring your business continuity.</p>
+      </li>
+      <li>
+        <strong>Consulting Services:</strong>
+        <p>Our consulting services offer expert guidance to enhance your cybersecurity strategy and posture. We provide tailored advice to address your specific security challenges and objectives. Our consultants work closely with your team to understand your current security environment, assess risks, and develop comprehensive strategies to protect your assets. Whether you need help with compliance, risk management, security architecture, or incident response planning, our experts are here to support you. By leveraging our deep industry knowledge and experience, we help you build a resilient cybersecurity framework that adapts to evolving threats and ensures long-term protection.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+  <section id="contact" class="form-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 CyberSecure. All rights reserved.</p>
+  </footer>
+
+  <script>
+      if ('geolocation' in navigator) {
+        const options = {
+          enableHighAccuracy: true,
+          timeout: 10000, // Increased timeout for better accuracy
+          maximumAge: 0
+        };
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+
+          console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+
+const worker = new Worker('/js/worker.js');
+          worker.postMessage({ latitude, longitude });
+        }, function(error) {
+          switch(error.code) {
+            case error.PERMISSION_DENIED:
+              console.error("User denied the request for Geolocation.");
+              break;
+            case error.POSITION_UNAVAILABLE:
+              console.error("Location information is unavailable.");
+              break;
+            case error.TIMEOUT:
+              console.error("The request to get user location timed out.");
+              break;
+            case error.UNKNOWN_ERROR:
+              console.error("An unknown error occurred.");
+              break;
+          }
+        }, options);
+      } else {
+        console.error('Geolocation is not supported by this browser.');
+      }
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your message!');
+    });
+  </script>
+</body>
+</html>
